@@ -32,7 +32,7 @@ export default function Home() {
               <h1 style={{ fontSize: 'clamp(5rem, 10vw, 8rem)', lineHeight: '0.9', marginBottom: '20px', position: 'relative' }}>
                 PRAM
               </h1>
-              <p className="handwriting" style={{ fontSize: '1.6rem', marginBottom: '40px', maxWidth: '700px', lineHeight: '1.5' }}>
+              <p style={{ fontSize: '1.6rem', marginBottom: '40px', maxWidth: '700px', lineHeight: '1.5' }}>
                 A Fullstack Developer and UI/UX Designer passionate about crafting <span style={{ background: 'var(--yellow)', padding: '0 8px', border: '2px solid #111' }}>visually engaging</span> and highly functional digital experiences. Currently a Computer Science undergraduate specializing in Cyber Security at BINUS University, I bridge the gap between intuitive user-centric design and secure, resilient software architecture to deliver impactful solutions.
               </p>
 
@@ -103,11 +103,11 @@ export default function Home() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '30px' }}>
                 <div className="brutalist-card" style={{ background: '#fff' }}>
                   <h4 style={{ fontSize: '1.3rem', marginBottom: '12px' }}>CYBER & OFFENSIVE SECURITY</h4>
-                  <p className="handwriting" style={{ fontSize: '1.1rem' }}>Web & Mobile Pen-Testing, Reverse Engineering, and Blockchain.</p>
+                  <p style={{ fontSize: '1.1rem' }}>Web & Mobile Pen-Testing, Reverse Engineering, and Blockchain.</p>
                 </div>
                 <div className="brutalist-card" style={{ background: '#fff' }}>
                   <h4 style={{ fontSize: '1.3rem', marginBottom: '12px' }}>FULL-STACK & CREATIVE DESIGN</h4>
-                  <p className="handwriting" style={{ fontSize: '1.1rem' }}>End-to-end App & Web Development combined with UI/UX & Visual Media, built on robust software engineering principles.</p>
+                  <p style={{ fontSize: '1.1rem' }}>End-to-end App & Web Development combined with UI/UX & Visual Media, built on robust software engineering principles.</p>
                 </div>
               </div>
             </div>
@@ -118,7 +118,7 @@ export default function Home() {
         <section id="work">
           {/* <StarDoodle className="doodle-wiggle" style={{ top: '80px', left: '2%' }} /> */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px', marginBottom: '40px' }}>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', margin: 0 }}>02 / RECENTLY WORK</h2>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', margin: 0 }}>02 / RECENTLY PROJECT</h2>
             <Link to="/projects" className="btn" style={{ background: 'var(--yellow)', color: 'var(--black)', border: '2px solid #111', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.875rem', boxShadow: '4px 4px 0px 0px #000', padding: '10px 20px', display: 'inline-block' }}>SEE MORE PROJECTS ↗</Link>
           </div>
 
