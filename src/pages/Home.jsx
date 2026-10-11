@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowDoodle, StarDoodle, CircleDoodle, SmileyDoodle } from '../components/Doodles';
 import { experiences, experienceOrder } from '../data/experience';
 
 export default function Home() {
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
       <nav>
-        <a href="#home" className="logo" style={{ boxShadow: '4px 4px 0px var(--black)', transform: 'none' }}>Pram.</a>
-        <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+        <a href="#home" onClick={() => setIsMenuOpen(false)} className="logo" style={{ boxShadow: '4px 4px 0px var(--black)', transform: 'none' }}>Pram.</a>
+        
+        {/* Desktop View (lg: screens and up) */}
+        <div className="nav-links nav-desktop" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <a href="#focus">About</a>
           <a href="#work">Work</a>
           <a href="#skills">Skills</a>
@@ -18,6 +21,37 @@ export default function Home() {
           <a href="#contact">Contact</a>
           <a href="/cv.pdf" download className="btn" style={{ marginLeft: '8px', padding: '8px 16px', fontSize: '0.9rem' }}>DOWNLOAD CV</a>
         </div>
+
+        {/* Mobile Hamburger Button (below lg: screens) */}
+        <button 
+          type="button"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="hamburger-btn"
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
+        >
+          {isMenuOpen ? '✕' : '☰'}
+        </button>
+
+        {/* Mobile Dropdown Menu */}
+        {isMenuOpen && (
+          <div className="mobile-nav-dropdown">
+            <a href="#focus" onClick={() => setIsMenuOpen(false)}>About</a>
+            <a href="#work" onClick={() => setIsMenuOpen(false)}>Work</a>
+            <a href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a>
+            <a href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</a>
+            <a href="#certificates" onClick={() => setIsMenuOpen(false)}>Award</a>
+            <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
+            <a 
+              href="/cv.pdf" 
+              download 
+              className="btn" 
+              onClick={() => setIsMenuOpen(false)}
+            >
+              DOWNLOAD CV
+            </a>
+          </div>
+        )}
       </nav>
 
       <main className="container" style={{ paddingTop: '120px' }}>
